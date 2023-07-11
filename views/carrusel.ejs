@@ -1,0 +1,153 @@
+<!doctype html>
+<html id="tienda">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/admin.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Admin panel</title>
+</head>
+<body>
+    <section class="p-8 bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md">
+        <h2 class="text-center text-white text-2xl font-semibold">
+           Carrusel de imagenes
+        </h2>
+    </section>
+
+    <%- include('partials/menuAdmin') %>
+
+   <div class="pt-20 pb-16 flex max-md:flex-col items-center justify-evenly">
+
+      <div>
+         <div>
+            <section>
+               <h3 class="text-center p-4 font-semibold">
+                  Imagen 1
+               </h3>
+            </section>
+
+            <div class="grid justify-items-center">
+               <div class="flex items-center gap-2">
+                  <div>
+                     <form action="/slaider1" method="post" class="flex gap-2 items-center">
+                        <div>
+                           <input type="text" placeholder="Url..." class="p-1 border-2 border-stone-300 rounded animacion w-full" name="img1">
+                        </div>
+                        <div>
+                           <button type="submit" class="bg-green-600 hover:bg-green-700 animacion text-white p-1 rounded">
+                              Subir
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+         
+                  <div>
+                     <% img1.forEach(function(app){ %>
+                        <form action="/slaider1/borrar/<%= app._id %>?_method=DELETE" method="POST">
+                           <input type="hidden" name="_method" value="DELETE">
+                           <button class="bg-red-500 text-white p-1 hover:bg-red-700 rounded animacion flex items-center" type="submit">
+                              <span>
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                 </svg>  
+                              </span>
+                           </button>
+                        </form>
+                     <% }) %>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="my-3">
+            <section>
+               <h3 class="text-center p-4 font-semibold">
+                  Imagen 2
+               </h3>
+            </section>
+
+            <div class="grid justify-items-center">
+               <div class="flex items-center gap-2">
+                  <div>
+                     <form action="/slaider2" class="flex gap-2 items-center" method="post">
+                        <div>
+                           <input type="text" placeholder="Url..." class="p-1 border-2 border-stone-300 rounded animacion w-full" name="img2">
+                        </div>
+                        <div>
+                           <button class="bg-green-600 hover:bg-green-700 animacion text-white p-1 rounded">
+                              Subir 
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+         
+                  <div>
+                     <% img2.forEach(function(app){ %>
+                        <form action="/slaider2/borrar/<%= app._id %>?_method=DELETE" method="POST">
+                           <input type="hidden" name="_method" value="DELETE">
+                           <button class="bg-red-500 text-white p-1 hover:bg-red-700 rounded animacion flex items-center" type="submit">
+                              <span>
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                 </svg>  
+                              </span>
+                           </button>
+                        </form>
+                     <% }) %>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="my-3">
+            <section>
+               <h3 class="text-center p-4 font-semibold">
+                  Imagen 3
+               </h3>
+            </section>
+
+            <div class="flex justify-evenly">
+               <div class="flex items-center gap-2">
+                  <div>
+                     <form action="/slaider3" method="post" class="flex gap-2 items-center">
+                        <div>
+                           <input type="text" placeholder="Url..." class="p-1 border-2 border-stone-300 rounded animacion w-full" name="img3">
+                        </div>
+                        <div>
+                           <button type="submit" class="bg-green-600 hover:bg-green-700 animacion text-white p-1 rounded">
+                              Subir 
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+         
+                  <div>
+                     <% img3.forEach(function(app){ %>
+                        <form action="/slaider3/borrar/<%= app._id %>?_method=DELETE" method="POST">
+                           <input type="hidden" name="_method" value="DELETE">
+                           <button class="bg-red-500 text-white p-1 hover:bg-red-700 rounded animacion flex items-center" type="submit">
+                              <span>
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                 </svg>  
+                              </span>
+                           </button>
+                        </form>
+                     <% }) %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="flex justify-center items-center pb-12">
+      <div style=" width: 270px;">
+         <p class="text-center text-gray-500">
+           <small>
+            <strong> Nota:</strong> en esta seccion puedes cambiar las imagenes del Carrusel de KeyMarket solo se puede subir 1 imagen por cada espacio.
+           </small>
+         </p>
+      </div>
+   </div>
+</body>

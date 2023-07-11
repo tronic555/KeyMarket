@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <title>login</title>
+</head>
+<body class="border-t-2 bg-gradient-to-r from-cyan-400 to-blue-500">
+
+    <section class="p-8">
+        <h1 class="font-semibold text-white text-center text-4xl">
+            KeyMarket
+        </h1>
+    </section>
+
+    <div class="flex justify-center form">
+        <div class="lg:w-1/5 w-3/5">
+            <form action="/login" method="POST" class="grid gap-1 bg-white p-7 rounded-lg shadow-xl">
+                <section>
+                    <h2 class="text-center text-2xl text-blue-500">
+                        Login
+                    </h2>
+                </section>
+                <div class="grid justify-items-center p-1">
+                    <div class="px-5 py-1">
+                        <p class="text-center max-md:text-sm">
+                            Correo:
+                        </p>
+                    </div>
+                    <div class="input-container w-full">
+                        <input placeholder="Tu correo..." class="input-field" type="email" name="correo">
+                        <label for="input-field" class="input-label">Ingrese el correo</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+                <div class="grid justify-items-center p-1">
+                    <div class="px-5 py-1">
+                        <p class="text-center max-md:text-sm">
+                            Contraseña:
+                        </p>
+                    </div>
+                    <div class="input-container w-full">
+                        <input placeholder="Tu contraseña..." class="input-field" type="password" name="contraseña">
+                        <label for="input-field" class="input-label">Ingrese la contraseña</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                </div>
+                <div class="grid justify-items-center p-1">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 p-2 text-white rounded w-full animacion">
+                        Enviar
+                    </button>
+                </div>
+                <div class="mt-2">
+                    <a href="/registro" class="hover:underline">
+                        <p class="text-center">
+                            ¿No tienes cuenta?
+                        </p>
+                    </a>
+                </div>
+                <% if (signinMessage) { %>
+
+                    <div>
+                        <p class="text-red-700 text-md text-center"><%= signinMessage %></p>
+                    </div>
+        
+                <% } %>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

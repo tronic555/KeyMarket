@@ -1,0 +1,16 @@
+.anchof{
+    width: 35vw;
+}
+
+.anchod{
+    width: 65vw;
+}
+
+@media(max-width:1024px){
+    .anchof{
+        width: 100vw;
+    }
+    .anchod{
+        display: none;
+    }
+}

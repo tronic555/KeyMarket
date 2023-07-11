@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/registro.css">
+    <title>Registro</title>
+</head>
+<body>
+
+    <div class="flex">
+        <div class="bg-white anchof">
+           <section class="p-8">
+            <h1 class="text-blue-500 text-center text-xl font-semibold"> Registrate </h1>
+           </section>
+           <div class="grid justify-items-center w-full">
+                <form action="/registro" method="POST" class="p-2 w-full grid justify-items-center" id="registro">
+
+                    <div class="w-11/12">
+                        <div class="px-5 py-1">
+                            Correo electronico:
+                        </div>
+                        <div class="input-container">
+                            <input placeholder="Escribe tu correo..." class="input-field" type="email" name="correo" id="correo">
+                            <label for="input-field" class="input-label">Ingrese el correo</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 w-11/12">
+                        <div class="px-5 py-1">
+                            Contraseña:
+                        </div>
+                        <div class="input-container">
+                            <input placeholder="Escribe tu contraseña..." class="input-field" type="password" name="contraseña" id="contraseña">
+                            <label for="input-field" class="input-label">Ingrese la contraseña</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                   </div>
+
+                   <div class="mt-6 w-11/12">
+                        <div class="px-5 py-1">
+                            Confirme la contraseña:
+                        </div>
+                        <div class="input-container">
+                            <input placeholder="Repetir contraseña" class="input-field" type="password" id="contraseña2">
+                            <label for="input-field" class="input-label">Repetir la contraseña</label>
+                            <span class="input-highlight"></span>
+                        </div>
+                   </div>
+
+                   <div class="flex justify-center items-center mt-12 w-10/12">
+                        <button id="btn-form" type="submit" class="bg-blue-500 text-white p-3 hover:bg-blue-600 disabled:opacity-80 animacion w-full rounded w-full" disabled>
+                          Registrate
+                        </button>
+                   </div>
+
+                   <div class="py-6 px-3">
+                        <p class="text-center text-gray-500">
+                            <small>
+                                <strong>Nota:</strong> La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                                sin otros simbolos.
+                            </small>
+                        </p>
+                   </div>
+
+                   <div id="respuesta-correo" class="p-2"></div>
+
+                </form>
+                <% if (signupMessage) { %>
+
+                    <div>
+                        <p class="text-red-700 text-md text-center"><%= signupMessage %></p>
+                    </div>
+        
+                <% } %>
+           </div>
+        </div>
+        <div class="bg-gradient-to-r from-blue-500 to-cyan-400 anchod">
+            <section>
+                <h2 class="text-center text-white text-4xl pt-5 font-semibold">KeyMarket </h2>
+            </section>
+            <div class="flex justify-center items-center" style="height: 100vh;">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_ntdmh9RIUC.json"  background="transparent"  speed="1"  style="width: 70%; height: 70%;"  loop autoplay></lottie-player>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/registro.js"></script>  
+</body>
+</html>

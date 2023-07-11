@@ -1,0 +1,167 @@
+<!doctype html>
+<html id="tienda">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="/css/header.css">
+  <title>Proyecto</title>
+</head>
+<body class="bg-gradient-to-r from-cyan-400 to-blue-500">
+
+    <% if (UsuarioValido) { %>
+
+        <%- include('partials/logeado') %>
+        
+    <% } else { %>
+
+        <%- include('partials/headers') %>
+        
+    <% } %>
+  
+    <main class="mt-6">
+
+        <div class="flex max-md:flex-col justify-evenly items-center p-4 my-8">
+            <div>
+
+                <div class="p-2 bg-white shadow-md">
+                    <img src="<%= pagina.url %>" style="width: 250px; height: 400px;" class="rounded-md">
+                </div>
+
+            </div>
+
+            <div class="bg-white mt-4 w-2/5 max-md:w-10/12 shadow-md rounded-md p-3">
+
+                <section class="p-2">
+                    <h1 class="text-2xl text-center uppercase text-blue-500 font-semibold">
+                        <%= pagina.producto %>
+                    </h1>
+                </section>
+
+                <div class="p-5">
+
+                    <div>
+                        <p class="text-2xl">
+                         <span class="text-green-600">USD <span class="precio"><%= pagina.precio %></span> $</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg">
+                        <span>licencia:</span>  <span><%= pagina.licencia %></span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-lg">
+                            Stock: <span class="text-green-600">disponible</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    <button class="bg-blue-500 hover:bg-blue-400 animacion p-3 rounded-md w-full pago">
+                        <p class="text-white text-center items-center gap-2 font-semibold uppercase">
+                           Comprar
+                        </p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="bg-white p-4 w-4/5 mb-8 shadow-md rounded-md flex flex-col gap-7 p-2">
+                <section class="p-6">
+                    <h2 class="text-xl text-center font-semibold">
+                        Resumen del Producto
+                    </h2>
+                </section>
+                <div class="flex justify-center pt-2 pb-3">
+                    <div class="md:w-11/12">
+                        <p class="md:text-justify text-center text-md leading-10 text-gray-600">
+                            <%= pagina.descripcion %>
+                        </p>
+                    </div>
+                </div>
+
+                <section class="p-8">
+                    <h3 class="text-center font-semibold text-lg">
+                        Pasos de compra
+                    </h3>
+                </section>
+
+                <div>
+                    <div class="flex justify-evenly items-center max-lg:flex-col-reverse max-lg:gap-4 max-lg:text-center">
+                        <div>
+                           <p class="text-gray-600">
+                            <strong>1-</strong> Debes crearte una cuenta en KeyMarket en caso de ya tenerla <br> ve a la seccion de login entra y inicia tu session con tu cuenta.
+                           </p>
+                        </div>
+                        <div>
+                            <img src="/img/cuenta.svg" width="300">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-evenly items-center max-lg:flex-col max-lg:gap-4 max-lg:text-center pt-16">
+                        <div>
+                            <img src="/img/Pago.svg" width="300">
+                        </div>
+                        <div>
+                            <p class="text-gray-600">
+                                <strong>2-</strong> Debes tener una cuenta en PayPal, Una vez la tengas dale click a comprar <br> y registra los datos que pida PayPal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-evenly items-center max-lg:flex-col-reverse max-lg:gap-4 max-lg:text-center pt-16">
+                        <div>
+                           <p class="text-gray-600">
+                            <strong>3-</strong> Espera a que PayPal haga el proceso de pago y <br> disfrute su producto.
+                           </p>
+                        </div>
+                        <div>
+                            <img src="/img/producto.svg" width="300">
+                        </div>
+                    </div>
+                </div>
+
+                <section class="p-12">
+                    <h3 class="text-center font-semibold text-xl">
+                        Comentarios
+                    </h3>
+                </section>
+
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://keymarket-1.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="text-white text-lg text-center p-3">
+            Un proyecto de Andres Eloy Madriz Gutierrez ED-tecnica
+        </p>
+    </footer>
+ <script src="/js/paypal.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ <script src="/js/menu.js"></script>
+ <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0" nonce="rEPr2XCt"></script>
+</body>
+</html>

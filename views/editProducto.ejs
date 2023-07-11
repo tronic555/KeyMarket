@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Editar✏️</title>
+</head>
+<body>
+    <section class="bg-gradient-to-r from-cyan-400 to-blue-500 p-4">
+        <h1 class="text-center text-white text-2xl">
+            Edicion del producto
+        </h1>
+    </section>
+
+    <div>
+
+      <div class="md:flex justify-center">
+         <form action="/admin/lista/edit/put/<%= ProductoEncontrado._id %>?_method=PUT" method="POST" class="bg-white hover:shadow-xl my-8 p-5 rounded-lg border-2 animacion border border-slate-400">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="flex items-center justify-center gap-3 p-3">
+            
+               <div>
+                  <h3 class="text-center font-semibold">
+                     ¿Añadir al inicio?
+                  </h3> 
+               </div>
+               <div>
+                  <input type="checkbox" name="favoritos" value="Si" class="p-2">
+               </div>
+      
+            </div>
+
+            <div class="md:flex items-center">
+
+               <div>
+                  <div class="p-2">
+                     <h3 class="text-center font-semibold">
+                        Nombre
+                     </h3>
+                  </div>
+   
+                  <div class="flex justify-center">
+                     <input type="text" class=" border-b-2 border-stone-300 linea-none w-10/12 p-2" placeholder="Indique nombre..." name="producto" value="<%= ProductoEncontrado.producto %>">
+                  </div>
+               </div>
+   
+               <div>
+                  <div class="p-2">
+                     <h3 class="text-center font-semibold">
+                        Precio
+                     </h3>
+                  </div>
+                  
+                  <div class="flex justify-center">
+                     <input type="number" min="1" class=" border-b-2 border-stone-300 linea-none w-10/12 p-2" placeholder="Indique precio..." name="precio" value="<%= ProductoEncontrado.precio %>">
+                  </div>
+               </div>
+
+            </div>
+
+            <div>
+               <div class="p-2">
+                  <h3 class="text-center font-semibold">
+                     Imgen
+                  </h3>
+               </div>
+               
+               <div class="flex justify-center">
+                  <input type="text" class=" border-b-2 border-stone-300 linea-none w-10/12 p-2" placeholder="Url de la imagen..." name="url" value="<%= ProductoEncontrado.url %>">
+               </div>
+            </div>
+
+            <div>
+               <div class="p-2">
+                  <h3 class="text-center font-semibold">
+                     Tipo de licencia
+                  </h3>
+               </div>
+               
+               <div  class="flex justify-center">
+                  <Select class="p-3 rounded-md fondo bg-stone-100 shadow-md w-10/12" name="licencia" value="<%= ProductoEncontrado.licencia %>">
+                     <option value="Software">Software</option>
+                     <option value="Servicios">Servicios</option>
+                     <option value="Tarjetas">Tarjetas</option>
+                     <option value="Juegos">Juegos</option>
+                  </Select>
+               </div>
+            </div>
+
+            <div class="mt-5">
+               <div class="p-2">
+                  <h3 class="text-center font-semibold">
+                     Descripcion
+                  </h3>
+               </div>
+               
+               <div class="flex justify-center">
+                  <textarea name="descripcion" class=" border-2 border-stone-300 linea-none w-10/12 rounded" style="height: 150px;">
+                     <%= ProductoEncontrado.descripcion %>
+                  </textarea>
+               </div>
+            </div>
+
+            <div class="flex justify-center my-4">
+               <div>
+                  <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-md animacion font-semibold">
+                     Actualizar
+                  </button>
+               </div>
+            </div>
+         </form>
+      </div>
+
+      <div class="flex justify-center items-center my-4">
+         <a href="/admin/lista" class="block p-4 shadow-mdv border-2 border-blue-500 animacion rounded-lg hover:bg-blue-500 text-black hover:text-white">
+            <p class="text-lg">
+               Regresar al listado
+            </p>
+         </a>
+      </div>
+</body>
+</html>

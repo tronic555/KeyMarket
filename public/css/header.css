@@ -1,0 +1,253 @@
+
+
+.animacion{
+    transition: all ease-in-out 250ms;
+}
+
+.animacion-2{
+    transition: all ease-in-out 250ms;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.menu{
+    height: 30px;
+    width: 30px;
+}
+
+.oculto{
+    top:64px;
+    left: -400px;
+    transition: all 500ms;
+}
+
+.activo{
+    left: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 80vh;
+}
+
+.letraError{
+    text-align: center;
+}
+/*dibujos*/
+
+.dibujo1{
+   height: 45vh;
+}
+
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.form{
+    margin-top: 5%;
+}
+
+/* Input container */
+.input-container {
+    position: relative;
+    margin: 20px;
+  }
+  
+  /* Input field */
+  .input-field {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  /* Input label */
+  .input-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: rgba(204, 204, 204, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Input highlight */
+  .input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+  }
+  
+  /* Input field:focus styles */
+  .input-field:focus + .input-label {
+    top: -20px;
+    font-size: 12px;
+    color: #007bff;
+  }
+  
+  .input-field:focus + .input-label + .input-highlight {
+    width: 100%;
+  }
+  
+  .container-input {
+    position: relative;
+  }
+  
+  .input {
+    width: 150px;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 1px #333;
+    transition: all .2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+  }
+  
+  .container-input svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+  
+  .input:focus {
+    opacity: 1;
+    width: 250px;
+  }
+
+  .main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.swiper-button-prev{
+  color: white;
+}
+
+.swiper-button-next {
+  color: white;
+}
+
+.carritoPosicion{
+  top: 85px;
+}
+
+.anchoCarrito{
+  width:25vw;
+  padding: 15px;
+}
+
+@media(max-width:1024px){
+  .anchoCarrito{
+    width: 75vw;
+  }
+}
+
+.noDisponible{
+  display: none;
+  opacity: 0;
+} 
+
+.disponible{
+  display: block;
+}
+
+.visible{
+  transition: 500ms all ease-in-out;
+  opacity: 100%;
+}
+
+.responsive{
+  padding: 15px;
+  height: 475px;
+  width: 650px;
+  overflow-y: scroll;
+}
+
+@media(max-width:768px){
+  .responsive{
+    width: 100%;
+    overflow-y: none;
+  }
+}
+
+.btnCompra{
+  width: 100%;
+}
+  .pagination {
+    display: flex;
+    gap:10px;
+    margin-top: 20px;
+  }
+
+  .pagination a {
+    border-radius: 5px;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+
+  .pagination a:hover{
+    background-color: #5fa3ec;
+    color: white;
+  }
+
+  .pagination a.active {
+    background-color:  #288af3;
+    color: #f3f3f3;
+    font-weight: 500;
+  }
+

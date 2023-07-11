@@ -1,0 +1,29 @@
+
+/*admin panel*/
+
+.animacion{
+    transition: 200ms all;
+}
+
+.img-admin{
+    height: 45vh;
+}
+
+.fondo{
+    background-color: #f0f0f0;
+}
+
+.linea-none{
+    outline: rgba(0, 0, 0,0);
+}
+
+input:focus{
+    border: left top right none;
+}
+
+.animacion{
+    transition: all 300ms;
+} 
+body{
+    overflow-x: hidden;
+}

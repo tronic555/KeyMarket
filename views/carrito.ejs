@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <title>Carrito de compras</title>
+</head>
+<body class="bg-white respuesta">
+
+    <% if (UsuarioValido) { %>
+
+        <%- include('partials/logeado') %>
+        
+    <% } else { %>
+
+        <%- include('partials/headers') %>
+        
+    <% } %>
+
+    <section class="p-12 mb-6">
+        <h2 class="text-center text-2xl text-blue-500">
+          <span class="typed"></span>
+        </h2>
+    </section>
+
+    <div class="grid max-md:grid-cols-1 justify-items-center mb-20">
+
+        <main class="flex max-md:flex-col gap-16">
+
+            <div class="responsive  bg-white shadow-lg rounded border-2 border-gray-200">
+
+                <% if (carrito.length == 0) { %>
+        
+                    <div class="grid items-center">
+                        <div>
+                            <p class="text-2xl text-center text-gray-400">
+                                No hay productos en tu carrito
+                            </p>
+                        </div>
+                    </div>
+                
+                <% } else { %>
+        
+                    <% carrito.forEach(function(producto){ %>
+                    
+                        <div class="border-b py-5"> 
+        
+                            <section class="p-1">
+                                <h3 class="text-center text-lg text-blue-500 font-semibold">
+                                <%= producto.titulo %>
+                                </h3>
+                            </section>
+        
+                            <div class="flex items-center gap-12">
+                                <div>
+                                    <img src="<%= producto.img %>" style="width: 125px; height: 170px;">
+                                </div>
+        
+                                <div class="grid justify-items-center items-center gap-3">
+                                    <div>
+                                        <select name="" id="" class="p-2 rounded bg-gray-100 product-cantidad">
+                                            <option value="1">Cantidad 1</option>
+                                            <option value="2">Cantidad 2</option>
+                                            <option value="3">Cantidad 3</option>
+                                            <option value="4">Cantidad 4</option>
+                                            <option value="5">Cantidad 5</option>
+                                            <option value="6">Cantidad 6</option>
+                                        </select>
+                                    </div>
+                
+                                    <div>
+                                        <p class="text-gray-500">
+                                            <span class="font-semibold">
+                                                Precio:
+                                            </span>
+                                            <span class="precioP">
+                                            <%= producto.precio %>
+                                            </span>
+                                            <span>
+                                            $
+                                            </span>
+                                        </p>
+                                    </div>
+            
+                                    <div>
+                                        <form action="/carrito/eliminar/<%= producto._id %>?_method=DELETE" method="post">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button class="bg-red-500 hover:bg-red-700 text-white p-1 rounded animacion">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>   
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                    <% }) %>
+        
+                <% } %>
+            </div>
+
+            <div>
+                <aside class="p-8">
+
+                    <section class="py-5">
+                        <h3 class="text-center text-2xl text-gray-500">
+                            Paga con PayPal:
+                        </h3>
+                    </section>
+
+                    <div class="bg-white p-5 shadow-lg rounded border-2 border-gray-200">
+                        <div class="flex justify-between mb-8">
+                           <div>
+                                <span class="font-semibold">
+                                    Precio total:   
+                                </span>
+                           </div>
+
+                           <div class="resT">
+
+                           </div>
+                          
+                        </div>
+
+                        <div class="flex justify-center mb-5">
+                           <div class="btnCompra">
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white p-3 animacion rounded btnCompra btnCarritoC">
+                                    Continuar con el pago
+                                </button>
+                           </div>
+                        </div>
+
+                        <div>
+                            <p>
+                                <small>
+                                    <strong>Nota:</strong> De momento solo aceptamos PayPal como medio de pago para la compra de productos.
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <div class="my-20">
+        <div class="flex justify-evenly items-center max-lg:flex-col-reverse max-lg:gap-4 max-lg:text-center">
+            <div>
+               <p class="text-gray-600">
+                <strong>1-</strong> Debes crearte una cuenta en KeyMarket en caso de ya tenerla <br> ve a la seccion de login entra y inicia tu session con tu cuenta.
+               </p>
+            </div>
+            <div>
+                <img src="/img/cuenta.svg" width="300">
+            </div>
+        </div>
+
+        <div class="flex justify-evenly items-center max-lg:flex-col max-lg:gap-4 max-lg:text-center pt-16">
+            <div>
+                <img src="/img/Pago.svg" width="300">
+            </div>
+            <div>
+                <p class="text-gray-600">
+                    <strong>2-</strong> Debes tener una cuenta en PayPal, Una vez la tengas dale click a comprar <br> y registra los datos que pida PayPal.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex justify-evenly items-center max-lg:flex-col-reverse max-lg:gap-4 max-lg:text-center pt-16">
+            <div>
+               <p class="text-gray-600">
+                <strong>3-</strong> Espera a que PayPal haga el proceso de pago y <br> disfrute su producto.
+               </p>
+            </div>
+            <div>
+                <img src="/img/producto.svg" width="300">
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="/js/typed2.js"></script>
+    <script src="/js/total.js"></script>
+    <script src="/js/pagarCarrito.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>
