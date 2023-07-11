@@ -27,3 +27,15 @@ input:focus{
 body{
     overflow-x: hidden;
 }
+
+.animated{
+    width: 450px;
+    height: 450px;
+}
+
+@media(max-width:768px){
+    .animated{
+        width: 300px;
+        height: 300px;
+    }
+}
