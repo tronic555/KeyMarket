@@ -572,8 +572,8 @@ ctrl.CrearOrden = async (req,res) => {
           brand_name:'KeyMarket',
           landing_page:'NO_PREFERENCE',
           user_action:'PAY_NOW',
-          return_url: 'http://localhost:4000/capturar-orden',
-          cancel_url: 'http://localhost:4000/cancelar-orden'
+          return_url: 'https://keymarket.onrender.com/capturar-orden',
+          cancel_url: 'https://keymarket.onrender.com/cancelar-orden'
         }
       };
     
