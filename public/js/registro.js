@@ -29,7 +29,7 @@ correo.addEventListener('input', (e) => {
 
         const msg = document.createElement('p');
         msg.textContent = 'Tu correo es valido ✔️';
-        msg.classList.add('text-md','text-green-500');
+        msg.classList.add('text-md','text-green-500','font-semibold');
         Resultado.appendChild(msg);
     
     } else {
@@ -38,7 +38,7 @@ correo.addEventListener('input', (e) => {
         
         const msg = document.createElement('p');
         msg.textContent = 'Tu correo no es valido ❌';
-        msg.classList.add('text-md','text-red-500');
+        msg.classList.add('text-md','text-red-500','font-semibold');
         Resultado.appendChild(msg);
         
     };
@@ -55,7 +55,7 @@ contraseña.addEventListener('input', (e) => {
 
         const msg = document.createElement('p');
         msg.textContent = 'Tu contraseña es valida ✔️';
-        msg.classList.add('text-md','text-green-500');
+        msg.classList.add('text-md','text-green-500','font-semibold');
         Resultado.appendChild(msg);
         
     } else {
@@ -64,42 +64,15 @@ contraseña.addEventListener('input', (e) => {
 
         const msg = document.createElement('p');
         msg.textContent = 'Tu contraseña no es valida❌';
-        msg.classList.add('text-md','text-red-500');
+        msg.classList.add('text-md','text-red-500','font-semibold');
         Resultado.appendChild(msg);
         
     }
 })
 
-matchContraseña.addEventListener('input', (e) => {
+function Validar(infoCorreo,infoPass){
 
-    matchPass = e.target.value === contraseña.value;
-    Validar(valorCorreo,valorContraseña,matchPass);
-
-    if (matchPass) {
-
-        limpiarHTML();
-
-        const msg = document.createElement('p');
-        msg.textContent = 'Tu contraseña si coinciden ✔️';
-        msg.classList.add('text-md','text-green-500');
-        Resultado.appendChild(msg);
-        
-        
-    } else {
-
-        limpiarHTML();
-
-        const msg = document.createElement('p');
-        msg.textContent = 'Tus contraseña no coinciden ❌';
-        msg.classList.add('text-md','text-red-500');
-        Resultado.appendChild(msg);
-        
-    }
-});
-
-function Validar(infoCorreo,infoPass,infoMatch){
-
-    if (!infoCorreo || !infoPass  || !infoMatch) {
+    if (!infoCorreo || !infoPass ) {
         
        document.getElementById("btn-form").disabled = true;
 

@@ -1,0 +1,9 @@
+1- instalar dependencias con npm install 
+
+2-crear un archivo .env 
+
+3-Dentro del archivo.env se debe crear las siguentes variables de entorno MONGODB_URI="Se coloca la url de mongodb atlas"
+
+4-Crear las variable de entorno de pay pal CLIENTE_PAYPAL="Se coloca el cliente de paypal" SECRET_PAYPAL="Se coloca la clave secreta de paypal"
+
+5-FIN
