@@ -1,0 +1,2 @@
+hay un middelware que restringe la entrada a los usuarios para el admin panel solo los usuario con el rol de admin pueden entrar
+puede entrar desde el archivo de github borrando el middelware llamado  permiso admin que esta em controladores 
